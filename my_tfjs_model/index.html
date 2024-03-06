@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <title>Mushroom classification</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      margin-top: 20px;
+      background-color: #f8f9fa;
+    }
+
+    .tfjs-example-container {
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .pred-container {
+      margin-bottom: 20px;
+    }
+
+    .pred-container > div {
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: top;
+    }
+
+    .row {
+      display: table-row;
+    }
+    .cell {
+      display: table-cell;
+      padding-right: 20px;
+    }
+
+    #file-container {
+      margin-bottom: 50px;
+
+    }
+
+    .title-area {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-head, .section-info {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tfjs-example-container">
+    <section class='title-area'>
+      <h1>Classification of mushrooms for Kazakhstan using Deep Learning</h1>
+    </section>
+
+    <section>
+      <p class='section-head'>Description</p>
+      <p>
+        Mushroom poisoning is a significant concern in Kazakhstan, where many people forage for mushrooms in the wild. This app provides a solution to this problem by leveraging deep learning techniques to classify mushrooms based on images.</a>.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-info">Information about the mushrooms</p>
+      <p>Volnushka (Latin Gyromitra) is a genus of fungi in the volnushkov family. There are various types of waves in Kazakhstan. Mushrooms of the genus Gyromitra are poisonous and can cause serious poisoning when eaten. They contain methylhydrazine, which is not completely destroyed when cooked.
+        Volnushki are used in folk medicine of some peoples as a remedy for neuralgia and sciatica.</p><br>
+
+      <p>Svinuha (Latin. Boletus is a genus of edible mushrooms from the white family. There are about 300 species of Boletus fungi in the world. Boletus badius (brownish) — has a brown cap and a yellow tubular layer. It is found in various forests, often near birch trees. It is considered edible, but its flesh can be bitter. Boletus luridus (gerbil) is a poisonous species, has a yellow or olive-yellow cap and a yellow tubular layer. It is found in coniferous and mixed forests.</p><br>
+       
+      <p>Ryadovki (Latin Lactarius) is a genus of fungi, the distinctive feature of which is the secretion of milk in case of damage, which can be white, yellow, orange, pink or red. Rowlets are often found in coniferous and deciduous forests, where they form mycorrhizal symbioses with trees. They play an important role in the ecosystem of forests and are a collection site for mushroom lovers. However, before collecting and consuming mushrooms from the genus Lactarius, it is necessary to be sure of their identification, since some species are poisonous.</p><br>
+
+      <p>Porcini (Latin Boletus edulis), is one of the most famous and popular edible mushrooms. Porcini mushrooms are one of the most valuable mushrooms to collect. They are widely used in cooking due to their pleasant taste and aroma.</p><br>
+
+      <p>Morels (Latin Suillus) is a genus of fungi in the bolete family (Boletaceae), which are often associated with coniferous forests, especially with firs and pines. Some types of morels are considered edible and even have some economic significance. However, not all types of morels are edible, and some may cause unsatisfactory taste or food poisoning.</p><br>
+
+      <p>Fly agaric (Latin Amanita) is a genus of fungi that includes both edible and poisonous species.Remember that fly agaric mushrooms are poisonous mushrooms and should only be consumed by experienced mushroom pickers with the necessary knowledge about their identification and processing. Improper use of fly agaric can lead to serious poisoning or even death.</p><br>
+
+    </section>
+    <section>
+      <p class='section-head'>Status</p>
+      <div id="status"></div>
+    </section>
+
+    <section>
+      <p class='section-head'>Model Output</p>
+
+      <div id="file-container" style="display: none">
+        Upload an image: <input type="file" id="files" name="files[]" multiple />
+      </div>
+
+      <div id="predictions"></div>
+
+      <img style="display: none" id="cat" src="cat.jpg" width=192 height=192 />
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <script src="index.js"></script>
+  </div>
+</body>
+</html>
